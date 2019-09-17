@@ -1,0 +1,40 @@
+﻿@model DotNetCoreSqlDb.Models.AllTables
+@{
+    ViewData["Title"] = "Home Page";  
+}
+
+@{
+    <br>    
+    <div>
+        @Html.DropDownList("MySkills", (IEnumerable<SelectListItem>)ViewBag.MySkills, new { @class = "form-control" }) 
+    </div> 
+    <br>
+    <div>
+        @{String choosentable=ViewData["choosenTable"] as String;
+        <input class="btn btn-primary" type="button" value="Klient" onclick="location.href='@Url.Action("Index", choosentable)'" onclick="test"/>}
+    </div>
+    <br>
+  
+    <div>
+        @using (Html.BeginForm("Index",  "Adres", FormMethod.Post, new { role = "form" })) {
+            <button type="submit" class="btn btn-primary">Adres</button>
+        }   
+    </div>
+    <br><br>
+    <div>
+        <form method="post" action="Query/Index" >
+        <fieldset>
+          <legend>Create own SQL Query: </legend>
+          <div>
+            <label for="SQL Query">SQL Query:</label>
+            <input class = "form-control" type="text" name="CompanyName" value="" />
+          </div>
+          <br>
+          <div>
+            <label>&nbsp;</label>
+            <input class="btn btn-primary" type="submit" value="Send SQL" class="submit"  />
+          </div>
+        </fieldset>
+      </form>
+    </div>
+}

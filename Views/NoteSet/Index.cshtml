@@ -1,0 +1,56 @@
+@model IEnumerable<DotNetCoreSqlDb.Models.NoteSet>
+
+@{
+    ViewData["Title"] = "Klient";
+}
+
+<h2>Witaj Klient</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.main_name)
+                </th>
+				<th>
+                     @Html.DisplayNameFor(model => model.long_description)
+                </th>
+                <th>
+                     @Html.DisplayNameFor(model => model.tags)
+                </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <th>
+                    @Html.DisplayFor(model => item.category)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => item.main_name)
+                </th>
+				<th>
+                     @Html.DisplayFor(model => item.long_description)
+                </th>
+                <th>
+                     @Html.DisplayFor(model => item.tags)
+                </th>
+                 <td>
+                <a asp-action="Edit" asp-route-id="@item.note_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.note_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.note_id">Delete</a>
+            </td>
+     
+        </tr>
+}
+    </tbody>
+	   
+    </div>
+</table>
