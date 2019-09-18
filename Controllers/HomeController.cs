@@ -80,7 +80,7 @@ namespace DotNetCoreSqlDb.Controllers
                     }
                 }
 
-            }//choj wie ale moze zadziała xdxd
+            }
            
               ViewData["AllTables"] = listItems;
                 return selectList;  
