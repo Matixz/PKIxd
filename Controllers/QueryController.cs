@@ -14,7 +14,7 @@ namespace DotNetCoreSqlDb.Controllers
         private readonly MyDatabaseContext _context;
         //private Query query;
 
-        public QueryController(MyDatabaseContext context/* , Query query*/)//z query nie działa
+        public QueryController(MyDatabaseContext context/* , Query query*/)
         {
             _context = context;
             //this.query=query;    
