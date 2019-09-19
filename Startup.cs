@@ -34,7 +34,7 @@ namespace DotNetCoreSqlDb {
             services.AddMvc ();
 
 
-     /*To ogólnie lepsze, bo nie ma co przy testowaniu bawić się "prawdziwą bazą danych, ale przy moich tesatch jednak się pobawimy */
+
             // if (Environment.GetEnvironmentVariable ("ASPNETCORE_ENVIRONMENT") == "Production")
             //     services.AddDbContext<MyDatabaseContext> (options =>
            //          options.UseSqlServer (Configuration.GetConnectionString ("MyDbConnection")));
@@ -48,8 +48,7 @@ services.AddDbContext<MyDatabaseContext> (options =>
             // Automatically perform database migration
            // services.BuildServiceProvider ().GetService<MyDatabaseContext> ().Database.Migrate ();
         }
-//zarza warcam, lece do kuchni na chwile xd
-//no to jetsme
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure (IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory) 
         {
